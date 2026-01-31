@@ -1,0 +1,120 @@
+.filterBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.leftControls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filterButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    background: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filterButton:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+}
+
+.icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.sortWrapper {
+    position: relative;
+}
+
+.sortSelect {
+    padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+    border: 1px solid #d1d5db;
+    background: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    transition: all 0.2s;
+}
+
+.sortSelect:hover {
+    background-color: #f9fafb;
+    border-color: #9ca3af;
+}
+
+.sortSelect:focus {
+    outline: none;
+    border-color: #6b7280;
+}
+
+.viewToggle {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.viewButton {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.viewButton:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+}
+
+.viewButton.active {
+    background: #111827;
+    border-color: #111827;
+}
+
+.viewButton.active .viewIcon {
+    color: white;
+}
+
+.viewIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #6b7280;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+    .filterBar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .leftControls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .viewToggle {
+        justify-content: flex-end;
+    }
+}

@@ -1,0 +1,144 @@
+/* 
+ * Global Spacing System - Rizabella-inspired
+ * Based on 8px grid for consistent, premium spacing throughout the site
+ */
+
+/* ========================================
+   SECTION SPACING
+   ======================================== */
+
+.section-spacing {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.section-spacing-sm {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.section-spacing-lg {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.section-spacing-top {
+    margin-top: 100px;
+}
+
+.section-spacing-bottom {
+    margin-bottom: 100px;
+}
+
+/* ========================================
+   CONTAINER SYSTEM
+   ======================================== */
+
+.container-premium {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.container-wide {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.container-full {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* ========================================
+   GRID PATTERNS
+   ======================================== */
+
+.grid-4col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.grid-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.grid-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .container-premium {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .container-wide {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .grid-4col {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .section-spacing {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .section-spacing-lg {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-premium {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .container-wide {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .grid-4col,
+    .grid-3col,
+    .grid-2col {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .section-spacing {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .section-spacing-sm {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .section-spacing-lg {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+}

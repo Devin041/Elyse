@@ -1,0 +1,163 @@
+/* Sidebar Styles */
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.filterSection {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1.5rem;
+}
+
+.sectionTitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #111827;
+    margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.optionList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.optionItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.8125rem;
+    color: #4b5563;
+    transition: color 0.2s;
+}
+
+.optionItem:hover {
+    color: #111827;
+}
+
+.checkbox {
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 2px;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.checkbox:checked {
+    background-color: #111827;
+    border-color: #111827;
+}
+
+.checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 3px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+}
+
+/* Price Range */
+.priceInputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.priceField {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border: 1px solid #d1d5db;
+    padding: 0.375rem 0.5rem;
+    border-radius: 2px;
+}
+
+.currency {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-right: 0.25rem;
+}
+
+.priceInput {
+    border: none;
+    width: 100%;
+    font-size: 0.8125rem;
+    outline: none;
+    color: #111827;
+}
+
+/* Swatches */
+.swatchList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.swatch {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.swatch:hover {
+    transform: scale(1.1);
+}
+
+.swatch.active {
+    border-color: #111827;
+    transform: scale(1.1);
+}
+
+/* Size Grid */
+.sizeGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.sizeBox {
+    padding: 0.375rem 0.25rem;
+    border: 1px solid #d1d5db;
+    text-align: center;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sizeBox:hover {
+    border-color: #111827;
+}
+
+.sizeBox.active {
+    background-color: #111827;
+    border-color: #111827;
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        display: none;
+        /* Mobile will need a drawer later */
+    }
+}

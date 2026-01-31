@@ -1,0 +1,88 @@
+/* Product Carousel Styles */
+
+.title {
+    text-align: center;
+    font-size: var(--font-size-h2);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-text-primary);
+}
+
+/* Tabs */
+.tabsWrapper {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+    flex-wrap: wrap;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 12px 32px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.tab:hover {
+    color: var(--color-text-primary);
+}
+
+.tabActive {
+    color: var(--color-text-primary);
+    font-weight: 600;
+    border-bottom-color: var(--color-gold);
+}
+
+/* Product Grid - Fixed Columns for Even Spacing */
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* Mobile: 1 column */
+    gap: 32px;
+    /* Matches Best Sellers gap-8 (8 * 4px = 32px) */
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 640px) {
+    .productGrid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Tablet: 2 columns */
+    }
+}
+
+@media (min-width: 1024px) {
+    .productGrid {
+        grid-template-columns: repeat(4, 1fr);
+        /* Desktop: 4 columns */
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .tabsWrapper {
+        gap: var(--spacing-sm);
+    }
+
+    .tab {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .productGrid {
+        gap: 20px;
+        /* Reduced gap on mobile */
+    }
+}

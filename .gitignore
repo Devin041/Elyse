@@ -1,0 +1,44 @@
+# Master .gitignore for Elyse Monorepo
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production
+dist/
+build/
+.next/
+out/
+
+# Environment Variables (CRITICAL: Do not push these)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.sample
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# IDE / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Supabase / Backend specifics
+supabase/.temp/
+.supabase/
+
+# OS files
+Thumbs.db
+desktop.ini

@@ -1,0 +1,169 @@
+/* Mega Menu Wrapper */
+.megaMenuWrapper {
+    position: static;
+    display: inline-block;
+}
+
+/* Overlay backdrop - covers entire viewport */
+.megaMenuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    pointer-events: all;
+}
+
+/* Main content container - full width, positioned below header */
+.megaMenuContent {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    padding: 60px 80px;
+    /* Even more generous padding */
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+}
+
+/* Inner container for sidebar + cards grid */
+.megaMenuInner {
+    max-width: 1600px;
+    /* Increased from 1400px for larger cards */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    /* Even narrower sidebar for more card space */
+    gap: 80px;
+    /* Increased gap */
+}
+
+/* Left Sidebar */
+.sidebar {
+    border-right: 1px solid #f0f0f0;
+    padding-right: 40px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 2px;
+}
+
+.sidebarLink {
+    display: block;
+    padding: 8px 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.6;
+    transition: color 0.2s ease;
+}
+
+.sidebarLink:hover {
+    color: #000;
+}
+
+/* Visual Cards Grid */
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    /* Back to 20px for larger cards */
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    aspect-ratio: 3/4;
+    display: block;
+    border-radius: 0;
+    background: #f9f9f9;
+}
+
+.cardImageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+}
+
+.card:hover .cardImage {
+    transform: scale(1.08);
+}
+
+/* Card Overlay */
+.cardOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 28px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+}
+
+.cardTitle {
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .megaMenuInner {
+        grid-template-columns: 160px 1fr;
+        gap: 40px;
+    }
+
+    .cardsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .megaMenuContent {
+        padding: 40px 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .megaMenuContent {
+        padding: 24px;
+    }
+
+    .megaMenuInner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    .cardsGrid {
+        grid-template-columns: 1fr;
+    }
+}
